@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.header {
+  font-family: "omnes-pro",sans-serif;
+  text-align: center;
+  h1 {
+    font-weight: 100;
+    color: #1f8dd6;
+    font-size: 500%;
+    padding: 0;
+    margin: 0;
+  }
+  h2 {
+    font-weight: 100;
+    color: #666;
+  }
+}
+
+.message {
+  // white-space: pre-wrap;
+  padding: 5px;
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  .text {
+    font-size: 16pt;
+  }
+  .user {
+    font-style: italic;
+    font-size: 10pt;
+  }
+}
+
+.message.done .status {
+  display: none;
+}
+
+
+.message.typing {
+  color: #dd514c;
+  .prof {
+    opacity: 0.5;
+  }
+}
+
+.pic {
+  float: left;
+  padding-right: 10px;
+}
+
+.message.yours {
+  text-align: right;
+  .pic {
+    float: right;
+    padding-left: 10px;
+    padding-right: 0;
+  }
+}
+
+.container {
+  width: 960px;
+  margin: auto;
+}
+
+#message {
+  width: 100%;
+  // padding: 2px;
+}
+
+.pure-g-r {
+  letter-spacing: 0em;
+}
+
+.pure-u-1-1 {
+  width: 100%;
+}
+
+.message, .input {
+  font-family: "proxima-nova", sans-serif !important;
+}
+
+.center {
+  text-align: center;
+}
+
+.prof {
+  border-radius: 100%;
+}
+
+.you {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  .prof {
+    vertical-align: middle;
+  }
+}

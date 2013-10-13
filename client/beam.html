@@ -1,0 +1,48 @@
+<head>
+  <title>Beam</title>
+</head>
+
+<body>
+  <div class='pure-g-r container'>
+    <div class='pure-u-1-1'>
+      <div class='header'>
+        <h1>Beam</h1>
+        <h2>The first actual instant messenger</h2>
+      </div>
+      {{#if currentUser}}
+        {{> beam}}
+      {{else}}
+        <div class='center'>
+          {{loginButtons}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</body>
+
+<template name="beam">
+  {{#each messages }}
+    <div class='pure-g-r'>
+      <div class='pure-u-1-1 message {{ klass }} {{ yours }}'>
+        <div class='pic'>
+          <img class='prof' src='https://graph.facebook.com/{{ fbId }}/picture'>
+        </div>
+        <p class='text'>
+          {{ parse message }}
+        </p>
+        <p class='user'>
+          {{ name }} <span class='status'>{{ status }}</span>
+        </p>
+      </div>
+    </div>
+  {{/each}}
+  <div class='input'>
+    <div class='pure-form'>
+      <input autofocus type='text' id='message' placeholder='Press Enter to send'>
+    </div>
+    <div class='you'>
+      <img class='prof' src='{{ prof }}'>
+      <span>{{ user }}</span>
+    </div>
+  </div>
+</template>
