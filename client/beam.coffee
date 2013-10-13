@@ -7,7 +7,7 @@ Template.beam.helpers
     return m
   'user': ->
     Meteor.user()?.profile.name
-  'messages': -> Messages.find()
+  'messages': -> Messages.find({}, {limit: 20, sort: {ts: -1}})?.fetch().reverse()
   'yours': ->
     if @userId is Meteor.userId() then "yours" else ""
   'klass': ->
@@ -29,6 +29,7 @@ update_message = (status) ->
       name: Meteor.user().profile.name
       status: status
       fbId: Meteor.user()?.services.facebook.id
+      ts: (new Date()).toUTCString()
     messageId = Messages.insert message
     Session.set("messageId", messageId)
   if status is "is done."
