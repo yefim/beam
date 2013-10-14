@@ -29,7 +29,7 @@ update_message = (status) ->
       name: Meteor.user().profile.name
       status: status
       fbId: Meteor.user()?.services.facebook.id
-      ts: (new Date()).toUTCString()
+      ts: new Date()
     messageId = Messages.insert message
     Session.set("messageId", messageId)
   if status is "is done."
